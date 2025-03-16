@@ -54,7 +54,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sub_description"
-        app:srcCompat="@drawable/happystamp" />
+        app:srcCompat="@drawable/happystamp"
+        android:background="@android:color/transparent"/>
 
     <TextView
         android:id="@+id/happy_textview"
@@ -75,7 +76,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/happy_textview"
-        app:srcCompat="@drawable/exitestamp" />
+        app:srcCompat="@drawable/exitestamp"
+        android:background="@android:color/transparent"/>
 
     <TextView
         android:id="@+id/exite_textview"
@@ -96,7 +98,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/exite_textview"
-        app:srcCompat="@drawable/normalstamp" />
+        app:srcCompat="@drawable/normalstamp"
+        android:background="@android:color/transparent"/>
 
     <TextView
         android:id="@+id/normal_textview"
@@ -116,7 +119,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/normal_textview"
-        app:srcCompat="@drawable/anxiousstamp" />
+        app:srcCompat="@drawable/anxiousstamp"
+        android:background="@android:color/transparent"/>
 
     <TextView
         android:id="@+id/anxious_textview"
@@ -136,7 +140,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/anxious_textview"
-        app:srcCompat="@drawable/angrystamp" />
+        app:srcCompat="@drawable/angrystamp"
+        android:background="@android:color/transparent"/>
 
     <TextView
         android:id="@+id/angry_textview"
@@ -157,7 +162,8 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_button" />
+        app:srcCompat="@drawable/back_button"
+        android:background="@android:color/transparent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
