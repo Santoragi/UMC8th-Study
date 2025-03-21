@@ -27,7 +27,8 @@
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_navi_item"
-        app:itemRippleColor="@null"
+        app:itemRippleColor="#FF0000"
+        app:itemIconTint="#00FF00"
         app:itemActiveIndicatorStyle="@null"
         android:background="@color/white" />
 
