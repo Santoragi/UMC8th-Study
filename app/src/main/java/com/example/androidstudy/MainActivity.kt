@@ -3,6 +3,7 @@ package com.example.androidstudy
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.androidstudy.databinding.ActivityMainBinding
@@ -27,21 +28,29 @@ class MainActivity : AppCompatActivity() {
 
         // BottomNavigationView 아이템 선택 리스너 설정
         binding.bottomNavi.setOnItemSelectedListener { item ->
+
+            val options = NavOptions.Builder()
+                .setEnterAnim(R.anim.slide_in_right)
+                .setExitAnim(R.anim.slide_out_left)
+                .setPopEnterAnim(R.anim.fade_in)
+                .setPopExitAnim(R.anim.fade_out)
+                .build()
+
             when (item.itemId) {
                 R.id.navigation_home -> {
-                    navController.navigate(R.id.fragment_home)
+                    navController.navigate(R.id.fragment_home,null,options)
                     true
                 }
                 R.id.navigation_social -> {
-                    navController.navigate(R.id.fragment_social)
+                    navController.navigate(R.id.fragment_social,null,options)
                     true
                 }
                 R.id.navigation_record -> {
-                    navController.navigate(R.id.fragment_record)
+                    navController.navigate(R.id.fragment_record,null,options)
                     true
                 }
                 R.id.navigation_mypage -> {
-                    navController.navigate(R.id.fragment_mypage)
+                    navController.navigate(R.id.fragment_mypage,null,options)
                     true
                 }
                 else -> false
