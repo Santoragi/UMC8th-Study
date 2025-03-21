@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,34 +20,20 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val happyButton = findViewById<ImageButton>(R.id.happy_stamp)
-        happyButton.setOnClickListener{
-            val intent = Intent(this,HappyActivity::class.java)
-            startActivity(intent)
-        }
+        // ImageButton ID와 연결된 Activity를 Map으로 매핑
+        val buttonMap = mapOf(
+            R.id.happy_stamp to HappyActivity::class.java,
+            R.id.exite_stamp to ExiteActivity::class.java,
+            R.id.normal_stamp to NormalActivity::class.java,
+            R.id.anxious_stamp to AnxiousActivity::class.java,
+            R.id.angry_stamp to AngryActivity::class.java
+        )
 
-        val exiteButton = findViewById<ImageButton>(R.id.exite_stamp)
-        exiteButton.setOnClickListener{
-            val intent = Intent(this,ExiteActivity::class.java)
-            startActivity(intent)
-        }
-
-        val normalButton = findViewById<ImageButton>(R.id.normal_stamp)
-        normalButton.setOnClickListener{
-            val intent = Intent(this,NormalActivity::class.java)
-            startActivity(intent)
-        }
-
-        val anxiousButton = findViewById<ImageButton>(R.id.anxious_stamp)
-        anxiousButton.setOnClickListener{
-            val intent = Intent(this,AnxiousActivity::class.java)
-            startActivity(intent)
-        }
-
-        val angryButton = findViewById<ImageButton>(R.id.angry_stamp)
-        angryButton.setOnClickListener{
-            val intent = Intent(this,AngryActivity::class.java)
-            startActivity(intent)
+        // 반복문을 사용해 리스너 설정
+        buttonMap.forEach { (buttonId, activityClass) ->
+            findViewById<ImageButton>(buttonId).setOnClickListener {
+                startActivity(Intent(this, activityClass))
+            }
         }
 
     }
