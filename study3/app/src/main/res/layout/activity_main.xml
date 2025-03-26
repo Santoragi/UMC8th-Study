@@ -56,7 +56,7 @@
                 android:id="@+id/mainMiniplayerSingerTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="아이유 (IU)"
+                android:text="아이유(IU)"
                 android:textSize="12sp" />
 
         </LinearLayout>

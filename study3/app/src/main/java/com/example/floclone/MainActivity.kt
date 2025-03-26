@@ -2,7 +2,9 @@ package com.example.floclone
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -10,6 +12,18 @@ import com.example.floclone.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+
+    // 1. Activity Result Launcher 등록
+    private val songActivityLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val title = result.data?.getStringExtra("title")
+            title?.let {
+                Toast.makeText(this, "선택한 앨범: $it", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,9 +35,13 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.main_fl, HomeFragment())
             .commitAllowingStateLoss()
 
+        initBottomNavigation()
+
         binding.mainPlayerCl.setOnClickListener {
             val intent = Intent(this, SongActivity::class.java)
-            startActivity(intent)
+            intent.putExtra("title",binding.mainMiniplayerTitleTv.text.toString())
+            intent.putExtra("singer",binding.mainMiniplayerSingerTv.text.toString())
+            songActivityLauncher.launch(intent)
         }
 
     }
