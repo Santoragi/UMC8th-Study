@@ -171,7 +171,7 @@
         android:max="100000"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
-        android:progress="8"
+        android:progress="0"
         app:layout_constraintBottom_toTopOf="@+id/song_player_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -181,7 +181,7 @@
         android:id="@+id/song_start_time_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00:08"
+        android:text="00:00"
         android:textColor="#3f3fff"
         app:layout_constraintStart_toStartOf="@+id/song_progress_sb"
         app:layout_constraintTop_toBottomOf="@+id/song_progress_sb" />
